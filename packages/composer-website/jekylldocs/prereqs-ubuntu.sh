@@ -67,8 +67,8 @@ export NVM_DIR="${HOME}/.nvm"
 
 # Install node
 echo "# Installing nodeJS"
-nvm install 8
-nvm use 8
+nvm install 8.9
+nvm use 8.9
 
 # Ensure that CA certificates are installed
 sudo apt-get -y install apt-transport-https ca-certificates
@@ -94,14 +94,14 @@ fi
 
 # Install Docker
 echo "# Installing Docker"
-sudo apt-get -y install docker-ce
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
 # Add user account to the docker group
 sudo usermod -aG docker $(whoami)
 
 # Install docker compose
 echo "# Installing Docker-Compose"
-sudo curl -L "https://github.com/docker/compose/releases/download/1.13.0/docker-compose-$(uname -s)-$(uname -m)" \
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" \
     -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
